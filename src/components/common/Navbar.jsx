@@ -11,12 +11,10 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-500 text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo and App Name */}
         <div className="flex items-center">
           <img src={logo} alt="QuirkyRoomie Logo" className="h-10 w-25 mr-2" />
         </div>
-
-        {/* Navigation Links */}
+ 
         <ul className="flex space-x-6">
         <li>
             { token  &&

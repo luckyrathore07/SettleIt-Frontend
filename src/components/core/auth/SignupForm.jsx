@@ -24,7 +24,7 @@ const SignupForm = () => {
       <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Sign Up for SettleIt</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Name Field */}
+           
           <div>
             <label className="block text-sm font-medium text-gray-600">Name</label>
             <input
@@ -34,8 +34,7 @@ const SignupForm = () => {
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
           </div>
-          
-          {/* Email Field */}
+        
           <div>
             <label className="block text-sm font-medium text-gray-600">Email</label>
             <input
@@ -45,8 +44,7 @@ const SignupForm = () => {
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
-
-          {/* Flat Code Field */}
+ 
           <div>
             <label className="block text-sm font-medium text-gray-600">Flat Code</label>
             <input
@@ -56,8 +54,7 @@ const SignupForm = () => {
             />
             {errors.flatCode && <p className="text-red-500 text-xs mt-1">{errors.flatCode.message}</p>}
           </div>
-
-          {/* Password Field */}
+ 
           <div>
             <label className="block text-sm font-medium text-gray-600">Password</label>
             <input
@@ -67,8 +64,7 @@ const SignupForm = () => {
             />
             {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
           </div>
-
-          {/* Confirm Password Field */}
+ 
           <div>
             <label className="block text-sm font-medium text-gray-600">Confirm Password</label>
             <input
@@ -81,12 +77,10 @@ const SignupForm = () => {
             />
             {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword.message}</p>}
           </div>
-
-          {/* Submit Button */}
+ 
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Sign Up</button>
         </form>
-
-        {/* Login Link */}
+ 
         <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account? <a href="/login" className="text-blue-500 hover:underline">Login</a>
         </p>

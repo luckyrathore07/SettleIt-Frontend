@@ -23,7 +23,7 @@ const LoginForm = () => {
       <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Login to SettleIt</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Email Field */}
+        
           <div>
             <label className="block text-sm font-medium text-gray-600">Email</label>
             <input
@@ -33,8 +33,7 @@ const LoginForm = () => {
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
-
-          {/* Password Field */}
+ 
           <div>
             <label className="block text-sm font-medium text-gray-600">Password</label>
             <input
@@ -44,12 +43,10 @@ const LoginForm = () => {
             />
             {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
           </div>
-
-          {/* Submit Button */}
+ 
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Login</button>
         </form>
-
-        {/* Sign Up Link */}
+ 
         <p className="text-center text-sm text-gray-600 mt-4">
           Don’t have an account? <a href="signup" className="text-blue-500 hover:underline">Sign Up</a>
         </p>

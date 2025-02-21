@@ -17,33 +17,33 @@ const App = () => {
           <Route
             path="login"
             element={
-              //<OpenRoute>
+             
                 <LoginForm />
-              //</OpenRoute>
+              
             }
         />
         <Route
           path="signup"
           element={
-            //<OpenRoute>
+            
               <SignupForm />
-            //</OpenRoute>
+             
           }
         />
         <Route
           path="/complaint"
           element={
-            //<OpenRoute>
+         
               <ComplaintForm />
-            //</OpenRoute>
+            
           }
         />
         <Route
           path="/"
           element={
-            //<OpenRoute>
+          
               <Home />
-            //</OpenRoute>
+           
           }
 
         />
@@ -51,18 +51,18 @@ const App = () => {
        <Route
           path="dashboard"
           element={
-            //<OpenRoute>
+             
               <Dashboard />
-            //</OpenRoute>
+      
           }
         />
 
         <Route
           path="createComplaint"
           element={
-            //<OpenRoute>
+         
               <ComplaintForm />
-            //</OpenRoute>
+             
           }
         />
         </Routes>

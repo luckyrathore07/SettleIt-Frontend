@@ -5,7 +5,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
-      {/* Hero Section */}
       <div className="text-center max-w-3xl">
         <h1 className="text-5xl font-bold mb-4">
           Resolve Issues Effortlessly with <span className="text-blue-400">SettleIt</span>
@@ -14,8 +13,7 @@ const Home = () => {
           SettleIt helps you manage and resolve roommate conflicts seamlessly. Whether its rent, chores, or personal 
           disputes, our platform ensures fair resolutions for everyone involved.
         </p>
-
-        {/* Action Buttons */}
+ 
         <div className="flex gap-4 justify-center">
           <button 
             className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition"

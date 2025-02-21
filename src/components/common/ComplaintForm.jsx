@@ -36,7 +36,6 @@ const ComplaintForm = ( ) => {
           {errors.title && <p className="text-red-500 text-xs mt-1 flex items-center"><FiAlertCircle className="mr-1" /> {errors.title.message}</p>}
         </div>
 
-        {/* Description */}
         <div>
           <label className="block text-sm font-medium text-gray-700">Description</label>
           <textarea
@@ -48,7 +47,6 @@ const ComplaintForm = ( ) => {
           {errors.description && <p className="text-red-500 text-xs mt-1 flex items-center"><FiAlertCircle className="mr-1" /> {errors.description.message}</p>}
         </div>
 
-        {/* Complaint Type */}
         <div>
           <label className="block text-sm font-medium text-gray-700">Complaint Type</label>
           <select
@@ -64,7 +62,7 @@ const ComplaintForm = ( ) => {
           {errors.complaintType && <p className="text-red-500 text-xs mt-1 flex items-center"><FiAlertCircle className="mr-1" /> {errors.complaintType.message}</p>}
         </div>
 
-        {/* Severity Level */}
+ 
         <div>
           <label className="block text-sm font-medium text-gray-700">Severity Level</label>
           <select
@@ -80,7 +78,7 @@ const ComplaintForm = ( ) => {
           {errors.severityLevel && <p className="text-red-500 text-xs mt-1 flex items-center"><FiAlertCircle className="mr-1" /> {errors.severityLevel.message}</p>}
         </div>
 
-        {/* Submit Button */}
+       
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition font-semibold"

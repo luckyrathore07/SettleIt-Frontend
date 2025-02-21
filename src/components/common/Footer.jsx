@@ -10,14 +10,12 @@ const Footer = () => {
           <p className="text-sm">Making roommate living easier & conflict-free.</p>
         </div>
 
-        {/* Navigation Links */}
         <div className="flex space-x-6 text-sm">
           <a href="/about" className="hover:text-blue-400 transition">About</a>
           <a href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</a>
           <a href="/contact" className="hover:text-blue-400 transition">Contact</a>
         </div>
-
-        {/* Social Media Icons */}
+ 
         <div className="flex space-x-4 text-xl mt-4 md:mt-0">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
             <FaFacebook />
@@ -34,7 +32,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="text-center text-sm text-gray-400 mt-4">
         &copy; {new Date().getFullYear()} SettleIt. All Rights Reserved.
       </div>
