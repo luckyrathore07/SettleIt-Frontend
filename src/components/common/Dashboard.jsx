@@ -1,15 +1,17 @@
- 
-import { apiConnector } from "../../services/apiConnector"
+ import { apiConnector } from "../../services/apiConnector"
 import { useState,useEffect } from 'react';
 import ComplaintCard from './ComplaintCard';
 import ComplaintForm from "./ComplaintForm";
+import { useSelector } from "react-redux";
+
 const Dashboard = () => {
-  const [complaints, setComplaints] = useState([]);
+   const { token } = useSelector((state) => state.auth)
+   const [complaints, setComplaints] = useState([]);
    const [activeButton, setActiveButton] = useState("fetchAllComplaints");
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await apiConnector("GET", `http://localhost:4000/api/v1/complaint/${activeButton}`);
+        const response = await apiConnector("GET", `http://localhost:4000/api/v1/complaint/${activeButton}`,{token:token});
         console.log("All card data",response.data)
         setComplaints(response.data );  
       } catch (e) {
