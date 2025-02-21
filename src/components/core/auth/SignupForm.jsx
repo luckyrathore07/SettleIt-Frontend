@@ -22,7 +22,7 @@ const SignupForm = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Sign Up for QuirkyRoomie</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Sign Up for SettleIt</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name Field */}
           <div>

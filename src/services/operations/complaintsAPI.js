@@ -28,7 +28,7 @@ export function submitComplaint(data, navigate,token) {
         toast.success("Complaint Submit Successful")
         
         
-        navigate("/contact")
+        navigate("/dashboard")
       } catch (error) {
         console.log("Error in complaint submissionnn............", error)
         toast.error("Complaint Submission Failed")
@@ -38,4 +38,3 @@ export function submitComplaint(data, navigate,token) {
     }
   }
 
-  

@@ -78,7 +78,7 @@ const ComplaintCard = (complaint) => {
             upVote === true ? "bg-green-500 text-white" : "bg-gray-200 text-gray-700"
           }`}
           onClick={() =>handleUpvote(complaint.complaint._id)}
-          disabled={resolved}
+          disabled={resolved || !complaint.complaint.status}
         >
           <FaThumbsUp className="text-lg" />
           <span>UpVote {upvoteCount}</span>
@@ -89,7 +89,7 @@ const ComplaintCard = (complaint) => {
             downVote === true ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
           }`}
           onClick={() =>handleDownvote(complaint.complaint._id)}
-          disabled={resolved}
+          disabled={resolved || !complaint.complaint.status}
         >
           <FaThumbsDown className="text-lg" />
           <span>Downvote {downvoteCount}</span>
@@ -101,9 +101,9 @@ const ComplaintCard = (complaint) => {
           resolved ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
         }`}
         onClick={() => {setResolved(true);complaintResolved(complaint.complaint._id)} }
-        disabled={resolved}
+        disabled={resolved ||!complaint.complaint.status}
       >
-        {resolved ? "Resolved" : "Mark as Resolved"}
+        {resolved || !complaint.complaint.status ? "Resolved" : "Mark as Resolved"}
       </button>
     </div>
   );

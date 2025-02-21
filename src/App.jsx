@@ -3,14 +3,15 @@ import Navbar from './components/common/Navbar'
 import { Route, Routes  } from "react-router-dom"
 import LoginForm from './components/core/auth/LoginForm'
 import SignupForm from './components/core/auth/SignupForm'
-import ComplaintCard from './components/common/ComplaintCard'
 import ComplaintForm from './components/common/ComplaintForm'
 import Home from './components/common/Home'
+import Dashboard from './components/common/Dashboard'
+import Footer from './components/common/Footer'
 
 
 const App = () => {
   return (
-    <div className="flex min-h-screen w-screen flex-col bg-richblack-900 font-inter ">
+    <div className="flex min-h-screen w-full flex-col bg-richblack-900 font-inter ">
         <Navbar/>
         <Routes>
           <Route
@@ -30,14 +31,6 @@ const App = () => {
           }
         />
         <Route
-          path="contact"
-          element={
-            //<OpenRoute>
-              <ComplaintCard />
-            //</OpenRoute>
-          }
-        />
-        <Route
           path="/complaint"
           element={
             //<OpenRoute>
@@ -52,8 +45,28 @@ const App = () => {
               <Home />
             //</OpenRoute>
           }
+
+        />
+
+       <Route
+          path="dashboard"
+          element={
+            //<OpenRoute>
+              <Dashboard />
+            //</OpenRoute>
+          }
+        />
+
+        <Route
+          path="createComplaint"
+          element={
+            //<OpenRoute>
+              <ComplaintForm />
+            //</OpenRoute>
+          }
         />
         </Routes>
+        <Footer/>
     </div>
     
   )

@@ -25,7 +25,7 @@ export function login(data, navigate) {
          console.log(response.data.token)
         dispatch(setUser({ ...response.data.user }))
         localStorage.setItem("token", JSON.stringify(response.data.token))
-        navigate("/")
+        navigate("/dashboard")
       } catch (error) {
         console.log("LOGIN API ERROR............", error)
         toast.error("Login Failed")
@@ -66,5 +66,16 @@ export function login(data, navigate) {
       }
       dispatch(setLoading(false))
       toast.dismiss(toastId)
+    }
+  }
+
+  export function logout(navigate) {
+    return (dispatch) => {
+      dispatch(setToken(null))
+      dispatch(setUser(null))
+      localStorage.removeItem("token")
+      localStorage.removeItem("user")
+      toast.success("Logged Out")
+      navigate("/")
     }
   }

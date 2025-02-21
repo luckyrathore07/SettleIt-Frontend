@@ -1,32 +1,41 @@
- 
-import { apiConnector } from "../../services/apiConnector"
-import { useState,useEffect } from 'react';
-import ComplaintCard from './ComplaintCard';
+ import { useNavigate } from "react-router-dom";
+
 const Home = () => {
-  const [complaints, setComplaints] = useState([]);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchComplaints = async () => {
-      try {
-        const response = await apiConnector("GET", "http://localhost:4000/api/v1/complaint/getComplaints");
-        console.log("All card data",response.data)
-        setComplaints(response.data );  
-      } catch (e) {
-        console.log( "Something went wrong!",e);
-      }  
-    };
-    fetchComplaints();
-  }, []);
   return (
-    <div className="flex flex-wrap gap-5 mt-5 mx-15">
-        {
-        complaints.map((complaint) => (
-             
-            <ComplaintCard key={complaint._id} complaint={complaint} />
-        ))
-        }
-</div>
-  )
-}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
+      {/* Hero Section */}
+      <div className="text-center max-w-3xl">
+        <h1 className="text-5xl font-bold mb-4">
+          Resolve Issues Effortlessly with <span className="text-blue-400">SettleIt</span>
+        </h1>
+        <p className="text-lg text-gray-300 mb-6">
+          SettleIt helps you manage and resolve roommate conflicts seamlessly. Whether its rent, chores, or personal 
+          disputes, our platform ensures fair resolutions for everyone involved.
+        </p>
 
-export default Home
+        {/* Action Buttons */}
+        <div className="flex gap-4 justify-center">
+          <button 
+            className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition"
+            onClick={() => navigate("/login")}
+          >
+            View All Complaints
+          </button>
+          
+          <button 
+            className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition"
+            onClick={() => navigate("/login")}
+          >
+            Submit a Complaint
+          </button>
+        </div>
+      </div>
+
+       
+    </div>
+  );
+};
+
+export default Home;
