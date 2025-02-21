@@ -4,6 +4,8 @@ import { Route, Routes  } from "react-router-dom"
 import LoginForm from './components/core/auth/LoginForm'
 import SignupForm from './components/core/auth/SignupForm'
 import ComplaintCard from './components/common/ComplaintCard'
+import ComplaintForm from './components/common/ComplaintForm'
+import Home from './components/common/Home'
 
 
 const App = () => {
@@ -32,6 +34,22 @@ const App = () => {
           element={
             //<OpenRoute>
               <ComplaintCard />
+            //</OpenRoute>
+          }
+        />
+        <Route
+          path="/complaint"
+          element={
+            //<OpenRoute>
+              <ComplaintForm />
+            //</OpenRoute>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            //<OpenRoute>
+              <Home />
             //</OpenRoute>
           }
         />

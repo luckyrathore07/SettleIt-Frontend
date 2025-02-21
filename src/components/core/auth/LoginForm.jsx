@@ -1,14 +1,21 @@
 import { useForm } from 'react-hook-form';
+import { useDispatch } from "react-redux"
+import { login } from "../../../services/operations/authAPI"
+import {   useNavigate } from "react-router-dom"
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log('Login Data:', data);
+  const onSubmit = (data,e) => {
+    e.preventDefault()
+    dispatch(login(data, navigate))
+    console.log("hello login")
   };
 
   return (
@@ -44,7 +51,7 @@ const LoginForm = () => {
 
         {/* Sign Up Link */}
         <p className="text-center text-sm text-gray-600 mt-4">
-          Don’t have an account? <a href="/register" className="text-blue-500 hover:underline">Sign Up</a>
+          Don’t have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a>
         </p>
       </div>
     </div>

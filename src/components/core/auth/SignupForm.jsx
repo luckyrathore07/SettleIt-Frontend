@@ -1,4 +1,8 @@
 import { useForm } from 'react-hook-form';
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { signUp } from "../../../services/operations/authAPI"
+ 
 
 const SignupForm = () => {
   const {
@@ -8,9 +12,12 @@ const SignupForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log('Signup Data:', data);
+  const onSubmit = (data,e) => {
+     e.preventDefault()
+     dispatch(signUp(data, navigate))
   };
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
